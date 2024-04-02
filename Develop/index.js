@@ -37,6 +37,7 @@ const questions = [
         type: 'list',
         message: 'What license would you like to include in this project?',
         name: 'license',
+        choices: ['MIT', 'Apache-2.0','GPL-3.0'],
     },
     {
         type: 'input',
@@ -62,7 +63,15 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+    .then((answers) => {
+        writeToFile('README.md', generateMarkdown);
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+    });
+}
 
 // Function call to initialize app
 init();
