@@ -8,31 +8,67 @@ const questions = [
         type: 'input',
         message: 'What is the name of your project?',
         name: 'title',
+        validate: function(input) {
+            if (input.trim() === '') {
+                return "Please enter a project name.";
+            }
+            return true;
+        }
     },
     {
         type: 'input',
         message: 'What would you like the description to be for this project?',
         name: 'description',
+        validate: function(input) {
+            if (input.trim() === '') {
+                return "Please enter a project description.";
+            }
+            return true;
+        }
     },
     {
         type: 'input',
         message: 'What is the installation instructions for this project?',
         name: 'installation',
+        validate: function(input) {
+            if (input.trim() === '') {
+                return "Please enter the installation instructions.";
+            }
+            return true;
+        }
     },
     {
         type: 'input',
         message: 'What is the usage information for this project?',
         name: 'usage',
+        validate: function(input) {
+            if (input.trim() === '') {
+                return "Please enter the usage information.";
+            }
+            return true;
+        }
     },
     {
         type: 'input',
         message: 'What is the contribution guidelines for this project?',
         name: 'contribution',
+        validate: function(input) {
+            if (input.trim() === '') {
+                return "Please enter the contribution guidelines.";
+            }
+            return true;
+        }
     },
     {
         type: 'input',
         message: 'What is the test instructions for this project?',
         name: 'test',
+        validate: function(input) {
+            if (input.trim() === '') {
+                return "Please enter the test instructions.";
+            }
+            return true;
+        }
     },
     {
         type: 'list',
@@ -44,11 +80,23 @@ const questions = [
         type: 'input',
         message: 'What is your GitHub username?',
         name: 'gitHub',
+        validate: function(input) {
+            if (input.trim() === '') {
+                return "Please enter your GitHub username.";
+            }
+            return true;
+        }
     },
     {
         type: 'input',
         message: 'What is your email address?',
         name: 'email',
+        validate: function(input) {
+            if (input.trim() === '') {
+                return "Please enter your email.";
+            }
+            return true;
+        }
     },
 ];
 
